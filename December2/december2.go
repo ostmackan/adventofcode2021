@@ -38,6 +38,7 @@ func main() {
 		lines    []string
 		position int = 0
 		depth    int = 0
+		aim      int = 0
 	)
 	lines = fileIo.ReadLines("input.txt")
 	commands := GetCommands(lines)
@@ -46,10 +47,11 @@ func main() {
 		switch command.direction {
 		case "forward":
 			position += command.units
+			depth += aim * command.units
 		case "up":
-			depth -= command.units
+			aim -= command.units
 		case "down":
-			depth += command.units
+			aim += command.units
 		}
 	}
 	println("position: " + fmt.Sprint(position))
