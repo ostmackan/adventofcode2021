@@ -1,1 +1,7 @@
 *.exe
+*.d
+*.rmeta
+*.bin
+*.lock
+*.o
+December4/target/
